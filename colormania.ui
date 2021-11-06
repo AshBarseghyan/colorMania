@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ColorMania</class>
+ <widget class="QMainWindow" name="ColorMania">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>365</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>365</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>365</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ColorMania</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget{
+
+	background-color: rgba(85, 255, 127, 30);
+}
+
+#colorArea{
+	background-color: rgb(0, 0, 0);
+min-height:40 px;
+width:40px;
+ border-radius: 45%;
+}
+
+#redLabel, #blueLabel , #greenLabel{
+	font: 75 italic 10pt &quot;Russian TimesET&quot;;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="colorArea">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>70</y>
+      <width>261</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,3,10">
+       <item>
+        <widget class="QLabel" name="redLabel">
+         <property name="text">
+          <string>Red</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="redBox">
+         <property name="maximum">
+          <number>255</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="redSlider">
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,3,10">
+       <item>
+        <widget class="QLabel" name="greenLabel">
+         <property name="text">
+          <string>Green</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="greenBox">
+         <property name="maximum">
+          <number>255</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="greenSlider">
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,3,10">
+       <item>
+        <widget class="QLabel" name="blueLabel">
+         <property name="text">
+          <string>Blue</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="blueBox">
+         <property name="maximum">
+          <number>255</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="blueSlider">
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>redBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>redSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>105</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>redSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>redBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>greenBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>greenSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>228</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>greenSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>greenBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>167</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blueBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>blueSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>blueSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>blueBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>120</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
